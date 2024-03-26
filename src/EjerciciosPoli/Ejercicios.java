@@ -42,7 +42,29 @@ public class Ejercicios {
      * debe indicar el índice de donde se encuentra el String más largo y la palabra.
      */
     public void punto3() {
-        System.out.println("Punto 3");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Escribe el tamaño del arreglo: ");
+        int size = scanner.nextInt();
+
+        String[] array = new String[size];
+
+        for (int i = 0; i < size; i++) {
+            System.out.println("Escribe la palabra " + (i + 1) + ": ");
+            array[i] = scanner.next();
+        }
+
+        int indexMaxLenght = 0;
+        int maxLenght = array[0].length();
+
+        for (int i = 1; i < size; i++) {
+            if (array[i].length() > maxLenght) {
+                maxLenght = array[i].length();
+                indexMaxLenght = i;
+            }
+        }
+
+        System.out.println("La cadena más larga ingresada es: " + array[indexMaxLenght]);
+        System.out.println("Se encuentra en el índice: " + indexMaxLenght);
     }
 }
 
