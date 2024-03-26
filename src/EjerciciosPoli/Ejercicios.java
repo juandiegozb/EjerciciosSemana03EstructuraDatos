@@ -76,6 +76,32 @@ public class Ejercicios {
      */
     public void punto2() {
         System.out.println("Punto 2");
+        Scanner scanner = new Scanner(System.in);
+
+        
+        int[] numeros = new int[10];
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Ingrese el número " + (i + 1) + ": ");
+            numeros[i] = scanner.nextInt();
+        }
+
+      
+        int max1 = Integer.MIN_VALUE;
+        int max2 = Integer.MIN_VALUE;
+        for (int num : numeros) {
+            if (num > max1) {
+                max2 = max1;
+                max1 = num;
+            } else if (num > max2 && num != max1) {
+                max2 = num;
+            }
+        }
+
+      
+        System.out.println("El segundo número más grande es: " + max2);
+
+        scanner.close();
+        
     }
 
 
