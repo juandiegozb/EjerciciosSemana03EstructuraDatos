@@ -22,7 +22,51 @@ public class Ejercicios {
      * los valores ingresados por el usuario.
      */
     public void punto1() {
-        System.out.println("Punto 1");
+        Scanner scanner = new Scanner(System.in);
+
+        // designar el tamaño de los arreglos
+        System.out.println("Ingrese el tamaño del  arreglo A:");
+        int tamanioA = scanner.nextInt();
+        System.out.println("Ingrese el tamaño del  arreglo B:");
+        int tamanioB = scanner.nextInt();
+
+        // Declarar los arreglos
+        int[] a = new int[tamanioA];
+        int[] b = new int[tamanioB];
+
+        // dar  los valores del primer arreglo
+        System.out.println("Ingrese los valores del  arreglo A:");
+        for (int i = 0; i < tamanioA; i++) {
+            a[i] = scanner.nextInt();
+        }
+
+        // indicar los valores del segundo arreglo
+        System.out.println("Ingrese los valores del  arreglo B:");
+        for (int i = 0; i < tamanioB; i++) {
+            b[i] = scanner.nextInt();
+        }
+
+        // Encontrar la intersección de los dos arreglos
+        int[] interseccion = new int[tamanioA];
+        int indiceInterseccion = 0;
+        for (int i = 0; i < tamanioA; i++) {
+            for (int j = 0; j < tamanioB; j++) {
+                if (a[i] == b[j]) {
+                    interseccion[indiceInterseccion++] = a[i];
+                }
+            }
+        }
+
+        // Imprimir la intersección de los arreglos si hay
+        if (indiceInterseccion > 0) {
+            System.out.println("Intersección de los dos arreglos:");
+            for (int i = 0; i < indiceInterseccion; i++) {
+                System.out.print(interseccion[i] + " ");
+            }
+            System.out.println();
+        } else {
+            System.out.println("No hay intersección entre los dos arreglos.");
+        }
     }
 
     /**
